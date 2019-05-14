@@ -19,6 +19,14 @@ class App extends React.Component {
     );
   }
 
+  componentDidMount() {
+    console.log('My component was rendered to the screen.');
+  }
+
+  componentDidUpdate() {
+    console.log('My component was just updated. It re-rendered!');
+  }
+
   // Conditional Rendering - return different JSX depending on the state or props of our components.
   render() {
     // If there is an error and no latitude, return the errorMessage
