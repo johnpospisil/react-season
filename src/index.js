@@ -19,16 +19,21 @@ class App extends React.Component {
     );
   }
 
-  // react says that we have to define render!!!
+  // Conditional Rendering - return different JSX depending on the state or props of our components.
   render() {
+    // If there is an error and no latitude, return the errorMessage
+    if (this.state.errorMessage && !this.state.lat) {
+      return <div>Error: {this.state.errorMessage}</div>
+    }
+
+    // If there is no error and there is latitude, show the latitude
+    if (!this.state.errorMessage && this.state.lat) {
+      return <div>Latitude: {this.state.lat}</div>
+    }
+
+    // Otherwise, show 'Loading...'
+    return <div>Loading...</div>
     
-    return (
-      <div>
-        Latitude: {this.state.lat}
-        <br />
-        Error: {this.state.errorMessage}
-      </div>
-    );
   }
 }
 
