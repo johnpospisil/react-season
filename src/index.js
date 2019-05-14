@@ -2,11 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props); // needed for every constructor
-    this.state = { lat: null }; // initially set latitude to 'null'. Can only use '=' to initially 
-                                // set state in constructors.
-  }
+  // This sort of statement can be a good alternative to a constructor
+  // if few variables need to be set.
+  state = {lat: null, errorMessage: null};
 
   componentDidMount() {
     // console.log('My component was rendered to the screen.');
