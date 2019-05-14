@@ -12,14 +12,23 @@ class App extends React.Component {
         // call 'setState' to update the state of the latitude
         this.setState({ lat: position.coords.latitude });
       },
-      (err) => console.log(err)
+      (err) => {
+        // console.log(err);
+        this.setState({ errorMessage: err.message });
+      }
     );
   }
 
   // react says that we have to define render!!!
   render() {
     
-    return <div>Latitude: {this.state.lat}</div>;
+    return (
+      <div>
+        Latitude: {this.state.lat}
+        <br />
+        Error: {this.state.errorMessage}
+      </div>
+    );
   }
 }
 
