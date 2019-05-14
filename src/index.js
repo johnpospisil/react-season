@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SeasonDisplay from './SeasonDisplay';
 
 class App extends React.Component {
   // This sort of statement can be a good alternative to a constructor
@@ -29,7 +30,8 @@ class App extends React.Component {
 
     // If there is no error and there is latitude, show the latitude
     if (!this.state.errorMessage && this.state.lat) {
-      return <div>Latitude: {this.state.lat}</div>
+      // return <div>Latitude: {this.state.lat}</div>
+      return <SeasonDisplay lat={this.state.lat} />
     }
 
     // Otherwise, show 'Loading...'
