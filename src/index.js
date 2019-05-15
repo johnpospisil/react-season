@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 class App extends React.Component {
   // This sort of statement can be a good alternative to a constructor
@@ -35,7 +36,7 @@ class App extends React.Component {
     }
 
     // Otherwise, show 'Loading...'
-    return <div>Loading...</div>
+    return <Spinner />; 
     
   }
 }
