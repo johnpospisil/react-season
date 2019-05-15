@@ -22,8 +22,7 @@ class App extends React.Component {
     console.log('My component was just updated. It re-rendered!');
   }
 
-  // Conditional Rendering - return different JSX depending on the state or props of our components.
-  render() {
+  renderContent() {
     // If there is an error and no latitude, return the errorMessage
     if (this.state.errorMessage && !this.state.lat) {
       return <div>Error: {this.state.errorMessage}</div>
@@ -38,6 +37,14 @@ class App extends React.Component {
     // Otherwise, show 'Loading...'
     return <Spinner message="If a pop-up appears, please ALLOW our location request..."/>; 
     
+  }
+
+  render() {
+    return (
+      <div style={{border: 'red solid 5px'}}>
+        {this.renderContent()}
+      </div>
+    );
   }
 }
 
