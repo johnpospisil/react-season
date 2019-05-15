@@ -36,7 +36,7 @@ class App extends React.Component {
     }
 
     // Otherwise, show 'Loading...'
-    return <Spinner />; 
+    return <Spinner message="If a pop-up appears, please ALLOW our location request..."/>; 
     
   }
 }
